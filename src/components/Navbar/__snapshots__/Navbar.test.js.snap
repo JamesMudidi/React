@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Head matches the snapshot 1`] = `
+<Bootstrap(undefined)
+  bg="info"
+  collapseOnSelect={true}
+  expand="lg"
+  fixed="top"
+  variant="dark"
+>
+  <NavbarBrand
+    href="#home"
+  >
+    iRepoter
+  </NavbarBrand>
+  <NavbarToggle
+    aria-controls="responsive-navbar-nav"
+    label="Toggle navigation"
+  />
+  <NavbarCollapse
+    id="responsive-navbar-nav"
+  >
+    <Nav
+      className="mr-auto"
+      fill={false}
+      justify={false}
+    >
+      <NavLink
+        as={[Function]}
+        disabled={false}
+        href="#"
+      />
+    </Nav>
+    <Nav
+      fill={false}
+      justify={false}
+    >
+      <NavLink
+        as={[Function]}
+        disabled={false}
+        href="#Login"
+      >
+        Login
+      </NavLink>
+      <NavLink
+        as={[Function]}
+        disabled={false}
+        href="#memes"
+      >
+        Sign up
+      </NavLink>
+    </Nav>
+  </NavbarCollapse>
+</Bootstrap(undefined)>
+`;

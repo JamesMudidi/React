@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer matches the snapshot 1`] = `
+<Footer
+  className="font-small pt-0 mt-0"
+  tag="footer"
+>
+  <Container
+    className="text-center text-md-left"
+    fluid={true}
+    tag="div"
+  />
+  <div
+    className="footer-copyright text-center py-3"
+  >
+    <Container
+      fluid={true}
+      tag="div"
+    >
+      ©
+       
+      2019
+       
+      Copyright:
+       
+      <a
+        href="iRepoter"
+      >
+         iRepoter 
+      </a>
+    </Container>
+  </div>
+</Footer>
+`;

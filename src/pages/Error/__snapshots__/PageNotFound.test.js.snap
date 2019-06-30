@@ -1,32 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Component matches the snapshot 1`] = `
-<div
-  className="container"
+exports[`PageNotFound matches the snapshot 1`] = `
+<_class
+  alert-light={true}
+  justify-content-sm-center={true}
 >
-  <div
-    className="copy-container error-space"
-  >
-    <p
-      className="error"
-    >
-      404
-    </p>
-    <br />
-    <p
-      className="error1"
-    >
-      Page not found.
-    </p>
-    <p
-      className="error2"
-    >
-      <a
-        href="#back"
-      >
-        Go back
-      </a>
-    </p>
-  </div>
-</div>
+  404
+  <br />
+   
+  The page you have requested for does not exist
+</_class>
 `;

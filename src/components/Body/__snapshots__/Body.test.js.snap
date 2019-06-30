@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body matches the snapshot 1`] = `
+<div>
+  <Bootstrap(Jumbotron)>
+    <h1
+      className="display-4"
+    >
+      Hello!
+    </h1>
+    <p
+      className="lead"
+    >
+      Welcome to iRepoter
+    </p>
+    <hr
+      className="my-2"
+    />
+    <p
+      className="text"
+    >
+      iReporter enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention around the community
+    </p>
+  </Bootstrap(Jumbotron)>
+</div>
+`;
