@@ -1,0 +1,25 @@
+# Logs
+logs
+*.Logs
+
+# Compiled directory and file
+build/
+bundle.js
+
+# Dependency directories
+node_modules/
+
+# node js dependencies
+node_modules/
+coverage/
+
+# lock dependencies
+package-lock.json
+yarn.json
+yarn.lock
+
+# distribution directories
+dist/
+
+#Desktop service store
+.DS_Store

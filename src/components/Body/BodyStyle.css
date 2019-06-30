@@ -1,0 +1,22 @@
+.lead {
+    margin-right: 25rem !important;
+    margin-left: 25rem !important;
+    font-size: 2rem !important;
+}
+
+.display-4 {
+    margin-right: 25rem !important;
+    margin-left: 25rem !important;
+}
+
+.jumbotron {
+    text-align: center !important;
+    padding: 15rem 2rem 15rem !important;
+    margin-bottom: .1rem !important;
+}
+
+.text {
+    text-align: center;
+    margin-right: 25rem !important;
+    margin-left: 25rem !important;
+}
