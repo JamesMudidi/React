@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert } from 'bootstrap-4-react';
 
-export default class App extends Component {
+export default class PageNotFound extends Component {
   render() {
     return <Alert secondary>Primary Alert</Alert>;
   }
