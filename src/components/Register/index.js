@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 import { Button, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { signupAction } from '../../actions/userActions';
 import { isLoggedOutInUser } from '../../pages/Landing';
 import Head from '../Navbar';
 import Footer from '../Footer';
 import './registerStyle.css';
+
 
 class Register extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Register extends Component {
   }
 
   onSubmitHandler = () => {
-    const { signup } = this.props;
+    const { signupAction } = this.props;
     const {
       firstname,
       lastname,
@@ -41,7 +42,7 @@ class Register extends Component {
       phoneNumber,
       password,
     } = this.state;
-    signup({
+    signupAction({
       firstname,
       lastname,
       othernames,
@@ -72,7 +73,11 @@ class Register extends Component {
         <Jumbotron className="register">
           <div className="signStr spacebottom"><h2>Register</h2></div>
           <form>
-            {isLoading && <div>Processing...</div>}
+            {isLoading && (
+            <div className="spinner-grow text-info" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+            )}
             <input
               className="form-control"
               type="text"
@@ -147,44 +152,10 @@ class Register extends Component {
   }
 }
 
-Register.propTypes = {
-  signup: PropTypes.func,
-  isLoading: PropTypes.bool,
-};
-
-Register.defaultProps = {
-  signup: () => {},
-  isLoading: false,
-};
-
-const mapDispatchToProps = dispatch => ({
-  signup: ({
-    firstname,
-    lastname,
-    othernames,
-    username,
-    email,
-    phoneNumber,
-    password,
-  }) => {
-    dispatch(signupAction({
-      firstname,
-      lastname,
-      othernames,
-      username,
-      email,
-      phoneNumber,
-      password,
-    }));
-  },
+const mapStateToProps = state => ({
+  singin: state.registerReducer.user,
+  isLoading: state.registerReducer.isLoading,
+  loginErrors: state.registerReducer.loginErrors,
 });
 
-const mapStateToProps = (state) => {
-  const { isLoading, user } = state.registerReducer;
-  return {
-    isLoading,
-    user,
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, { signupAction })(Register);

@@ -34,7 +34,52 @@ export const signupAction = user => (dispatch) => {
       window.location.replace('/');
     })
     .catch((error) => {
-      dispatch(signupFail(error));
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: error.response.data.message,
+      });
+      if (error.response.data.message.firstname) {
+        const firstnameError = error.response.data.message.firstname;
+        toast.error(`:( ${firstnameError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
+      if (error.response.data.message.lastname) {
+        const lastnameError = error.response.data.message.lastname;
+        toast.error(`:( ${lastnameError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
+      if (error.response.data.message.username) {
+        const usernameError = error.response.data.message.username;
+        toast.error(`:( ${usernameError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
+      if (error.response.data.message.email) {
+        const emailError = error.response.data.message.email;
+        toast.error(`:( ${emailError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
+      if (error.response.data.message.phonenumber) {
+        const phonenumberError = error.response.data.message.phonenumber;
+        toast.error(`:( ${phonenumberError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
+      if (error.response.data.message.password) {
+        const passwordError = error.response.data.message.password;
+        toast.error(`:( ${passwordError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
     });
 };
 
