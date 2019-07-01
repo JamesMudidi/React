@@ -3,7 +3,7 @@ import { Button, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import signupAction from '../../actions/userActions';
+import { signupAction } from '../../actions/userActions';
 import { isLoggedOutInUser } from '../../pages/Landing';
 import Head from '../Navbar';
 import Footer from '../Footer';

@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import {
   AUTHENTICATE,
   REGISTER_SUCCESS,
+  LOGIN_FAIL,
   REGISTER_FAIL,
 } from './types';
 
@@ -21,7 +23,7 @@ const signupFail = error => ({
   payload: error.response.data.message,
 });
 
-const signupAction = user => (dispatch) => {
+export const signupAction = user => (dispatch) => {
   dispatch(authenticate());
   axios
     .post(`${baseURL}signup`, user)
@@ -36,22 +38,36 @@ const signupAction = user => (dispatch) => {
     });
 };
 
-export default signupAction;
-
-// export const loginAction = (user, history) => axios
-//   .post(`${baseURL}login`, user)
-//   .then((response) => {
-//     localStorage.setItem('accessToken', response.data.user.token);
-//     localStorage.setItem('username', response.data.user.username);
-//     localStorage.setItem('email', response.data.user.email);
-//     localStorage.setItem('userAuthenticated', true);
-//     notify.show('Login successful', 'success', 4000);
-//     history.push('/dashboard');
-//   })
-//   .catch((error) => {
-//     if (error.response) {
-//       const errorObject = error.response.data.message;
-//       const errorMessage = errorObject[Object.keys(errorObject)[0]][0];
-//       notify.show(errorMessage, 'error', 4000);
-//     }
-//   });
+export const loginAction = (email, password) => (dispatch) => {
+  dispatch({
+    type: AUTHENTICATE,
+  });
+  axios
+    .post(`${baseURL}login`, { email, password })
+    .then((response) => {
+      dispatch(signupSuccess(response));
+      sessionStorage.setItem('token', response.data.token);
+      sessionStorage.setItem('username', response.data.user.username);
+      window.location.replace('/');
+    })
+    .catch((error) => {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: error.response.data.message,
+      });
+      if (error.response.data.message.email) {
+        const emailError = error.response.data.message.email;
+        toast.error(`:( ${emailError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
+      }
+      if (error.response.data.message.password) {
+        const passwordError = error.response.data.message.password;
+        toast.error(`:( ${passwordError}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
+      }
+    });
+};

@@ -1,40 +1,35 @@
 import {
   AUTHENTICATE,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
+  GET_INCIDENT_SUCCESS,
+  GET_INCIDENT_FAIL,
 } from '../../actions/types';
 
 const initialState = {
   isLoading: false,
-  isLoggedin: false,
-  user: {},
-  loginErrors: {},
+  incidents: [],
 };
 
-const loginReducer = (state = initialState, action) => {
+const incidentReducer = (state = initialState, action) => {
   switch (action.type) {
     case AUTHENTICATE:
       return {
         ...state,
         isLoading: true,
       };
-    case LOGIN_SUCCESS:
+    case GET_INCIDENT_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        isLoggedin: true,
-        user: action.payload,
+        incidents: action.payload,
       };
-    case LOGIN_FAIL:
+    case GET_INCIDENT_FAIL:
       return {
         ...state,
         isLoading: false,
-        isLoggedin: false,
-        loginErrors: action.payload,
       };
     default:
       return { state };
   }
 };
 
-export default loginReducer;
+export default incidentReducer;
