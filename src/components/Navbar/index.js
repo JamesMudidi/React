@@ -11,7 +11,7 @@ const Head = (props) => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="info" variant="dark" fixed="top">
-      <Navbar.Brand href="http://localhost:8080/">iRepoter</Navbar.Brand>
+      <Navbar.Brand href="/">iRepoter</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
