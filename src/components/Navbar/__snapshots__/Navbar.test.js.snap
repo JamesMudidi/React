@@ -9,7 +9,7 @@ exports[`Head matches the snapshot 1`] = `
   variant="dark"
 >
   <NavbarBrand
-    href="#home"
+    href="http://localhost:8080/"
   >
     iRepoter
   </NavbarBrand>
@@ -28,28 +28,13 @@ exports[`Head matches the snapshot 1`] = `
       <NavLink
         as={[Function]}
         disabled={false}
-        href="#"
+        href=""
       />
     </Nav>
     <Nav
       fill={false}
       justify={false}
-    >
-      <NavLink
-        as={[Function]}
-        disabled={false}
-        href="#Login"
-      >
-        Login
-      </NavLink>
-      <NavLink
-        as={[Function]}
-        disabled={false}
-        href="#memes"
-      >
-        Sign up
-      </NavLink>
-    </Nav>
+    />
   </NavbarCollapse>
 </Bootstrap(undefined)>
 `;

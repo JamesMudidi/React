@@ -2,6 +2,7 @@
 
 exports[`Footer matches the snapshot 1`] = `
 <Footer
+  background-color="#e9ecef"
   className="font-small pt-0 mt-0"
   tag="footer"
 >

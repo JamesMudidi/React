@@ -2,7 +2,10 @@
 
 exports[`Login Component matches the snapshot 1`] = `
 <div>
-  <Head />
+  <Head
+    loginLink="Login"
+    signupLink="Sign up"
+  />
   <Body />
   <Footer />
 </div>

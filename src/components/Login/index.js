@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { isLoggedInUser } from '../../pages/Landing';
 import Head from '../Navbar';
 import Footer from '../Footer';
 import './loginStyle.css';
+
 
 const Login = ({
   email, password, handleSubmit, onChange,
 }) => (
   <React.Fragment>
-    <Head />
+    <Head loginLink="" signupLink={isLoggedInUser()} />
     <Jumbotron className="login">
       <div className="signStr spacebottom"><h2>Login</h2></div>
       <form>
