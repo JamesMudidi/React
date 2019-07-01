@@ -18,8 +18,8 @@ const Head = (props) => {
           <Nav.Link href=""></Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="http://localhost:8080/login">{loginLink}</Nav.Link>
-          <Nav.Link href="http://localhost:8080/signup">{signupLink}</Nav.Link>
+          <Nav.Link href="/login">{loginLink}</Nav.Link>
+          <Nav.Link href="/signup">{signupLink}</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
