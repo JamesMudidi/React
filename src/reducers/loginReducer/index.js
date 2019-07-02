@@ -23,7 +23,7 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         isLoggedin: true,
-        user: action.payload,
+        user: action,
       };
     case LOGIN_FAIL:
       return {
