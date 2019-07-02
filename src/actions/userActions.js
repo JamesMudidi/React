@@ -32,6 +32,13 @@ export const signupAction = user => (dispatch) => {
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('username', response.data.user.username);
       window.location.replace('/login');
+      if (response.data.message) {
+        const successMessage = response.data.message;
+        toast.success(`:( ${successMessage}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
     })
     .catch((error) => {
       dispatch({
@@ -94,6 +101,13 @@ export const loginAction = (email, password) => (dispatch) => {
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('username', response.data.user.username);
       window.location.replace('/');
+      if (response.data.message) {
+        const successMessage = response.data.message;
+        toast.success(`:( ${successMessage}`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 5000,
+        });
+      }
     })
     .catch((error) => {
       dispatch({
