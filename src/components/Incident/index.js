@@ -18,7 +18,7 @@ class Incident extends Component {
     // } = this.state;
     return (
       <div>
-        Incident
+        You have not created any incidents yet
       </div>
     );
   }
