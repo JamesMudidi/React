@@ -31,7 +31,7 @@ export const signupAction = user => (dispatch) => {
       dispatch(signupSuccess(response));
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('username', response.data.user.username);
-      window.location.replace('/');
+      window.location.replace('/login');
     })
     .catch((error) => {
       dispatch({
